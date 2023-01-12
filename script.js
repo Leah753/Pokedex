@@ -47,11 +47,22 @@ html += `
     <p>Average spawn: ${data.pokemon[i].avg_spawns}</p>
     <p>Spawn time: ${data.pokemon[i].spawn_time}/p>
     <p>Multipliers: ${data.pokemon[i].multipliers}</p>
+
+
     <h2>Evolution line</h2>
-    <p>Pokemon number:</p>
-    <p>Pokemon Name</p>
-    <p>Pokemon number:</p>
-    <p>Pokemon Name</p>
+    `
+    
+    if (data.pokemon[i].prev_evolution !== undefined){
+        html +=`
+        <p>Previous Evolution: ${data.pokemon[i].prev_evolution[0].num} - ${data.pokemon[i].prev_evolution[0].name}</p>`
+    }
+    
+    if (data.pokemon[i].next_evolution !== undefined){
+        html +=`
+        <p>Next Evolution: ${data.pokemon[i].next_evolution[0].num} - ${data.pokemon[i].next_evolution[0].name}</p>`
+    }
+
+    html +=`
     </div>
     `
     
