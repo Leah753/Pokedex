@@ -5,6 +5,7 @@ const output = document.getElementById("output");
 
  let html = "";
 for (let i = 0; i < data.pokemon.length; i++) {
+    let current_pokemon = i;
     // html += `<p>${data[i].name}: ${data[i].value}</p>`;
     html += `
     <div class="pokemon-card">
@@ -17,18 +18,25 @@ for (let i = 0; i < data.pokemon.length; i++) {
 
       `
       //check if pokemon has a second type
-    if (data.pokemon[i].type[1] !== undefined)
+    if (data.pokemon[i].type[1] !== undefined){
         html += `
         <li>${data.pokemon[i].type[1]}</li>
         `
+    }
 
     html += `
     </ul>
     <h2>Weaknesses:</h2>
     <ul>
-      <li>Type 1</li>
-      <li>Type 2</li>
-      <li>Type 3</li>
+    `
+    for (let i = 0; i < data.pokemon[current_pokemon].weaknesses.length; i++) {
+         html += `
+         <li>${data.pokemon[current_pokemon].weaknesses[i]}</li>
+         `
+    };
+
+html += `
+      
     </ul>
     <p>Height: ${data.pokemon[i].height}</p>
     <p>Weight: ${data.pokemon[i].weight}</p>
