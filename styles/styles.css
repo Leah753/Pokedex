@@ -20,3 +20,6 @@ h1 {
     font-style: normal;
 }
 
+.pokemon-card ul {
+    list-style: none;
+}
