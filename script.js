@@ -51,15 +51,19 @@ html += `
 
     <h2>Evolution line</h2>
     `
-    
+
     if (data.pokemon[i].prev_evolution !== undefined){
-        html +=`
-        <p>Previous Evolution: ${data.pokemon[i].prev_evolution[0].num} - ${data.pokemon[i].prev_evolution[0].name}</p>`
+        for (let i = 0; i < data.pokemon[current_pokemon].prev_evolution.length; i++) {
+            html +=`
+            <p>Previous Evolution: ${data.pokemon[current_pokemon].prev_evolution[i].num} - ${data.pokemon[current_pokemon].prev_evolution[i].name}</p>`
+        }
     }
     
     if (data.pokemon[i].next_evolution !== undefined){
-        html +=`
-        <p>Next Evolution: ${data.pokemon[i].next_evolution[0].num} - ${data.pokemon[i].next_evolution[0].name}</p>`
+        for (let i = 0; i < data.pokemon[current_pokemon].next_evolution.length; i++){
+            html +=`
+            <p>Next Evolution: ${data.pokemon[current_pokemon].next_evolution[i].num} - ${data.pokemon[current_pokemon].next_evolution[i].name}</p>`
+        }
     }
 
     html +=`
