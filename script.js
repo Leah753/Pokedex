@@ -51,23 +51,51 @@ html += `
 
 
     <h2>Evolution line</h2>
+    <h3>Previous Evolutions:</h3>
     `
+    //check if there are NOT previous evolutions for pokemon
+    if (data.pokemon[i].prev_evolution === undefined){
+        html +=`
+        <p>None</p>
+        `
+    }
     //check if there are previous evolutions for pokemon
     if (data.pokemon[i].prev_evolution !== undefined){
+        html +=`
+        <ul>
+        `
         //loops through prev_evolutions and prints them out
         for (let i = 0; i < data.pokemon[current_pokemon].prev_evolution.length; i++) {
             html +=`
-            <p>Previous Evolution: ${data.pokemon[current_pokemon].prev_evolution[i].num} - ${data.pokemon[current_pokemon].prev_evolution[i].name}</p>`
+             <li>${data.pokemon[current_pokemon].prev_evolution[i].num} - ${data.pokemon[current_pokemon].prev_evolution[i].name}</li>`
         }
+        html +=`
+        </ul>
+        `
     }
-    
+
+    html +=`
+        <h3>Next Evolutions</h3>
+        `
+    //check if there are NOT net evolutions for pokemon
+    if (data.pokemon[i].next_evolution === undefined){
+        html +=`
+        <p>None</p>`
+    }
+
     //check if there are next evolutions for pokemon
     if (data.pokemon[i].next_evolution !== undefined){
+        html +=`
+        <ul>
+        `
         //loops through next_evolutions and prints them out
         for (let i = 0; i < data.pokemon[current_pokemon].next_evolution.length; i++){
             html +=`
-            <p>Next Evolution: ${data.pokemon[current_pokemon].next_evolution[i].num} - ${data.pokemon[current_pokemon].next_evolution[i].name}</p>`
+            <li>${data.pokemon[current_pokemon].next_evolution[i].num} - ${data.pokemon[current_pokemon].next_evolution[i].name}</li>`
         }
+        html +=`
+        </ul>
+        `
     }
 
     html +=`
