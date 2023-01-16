@@ -29,6 +29,7 @@ for (let i = 0; i < data.pokemon.length; i++) {
     <h2>Weaknesses:</h2>
     <ul>
     `
+    //loop through weaknesses array for current pokemon and add weaknesses for pokemon
     for (let i = 0; i < data.pokemon[current_pokemon].weaknesses.length; i++) {
          html += `
          <li>${data.pokemon[current_pokemon].weaknesses[i]}</li>
@@ -51,15 +52,18 @@ html += `
 
     <h2>Evolution line</h2>
     `
-
+    //check if there are previous evolutions for pokemon
     if (data.pokemon[i].prev_evolution !== undefined){
+        //loops through prev_evolutions and prints them out
         for (let i = 0; i < data.pokemon[current_pokemon].prev_evolution.length; i++) {
             html +=`
             <p>Previous Evolution: ${data.pokemon[current_pokemon].prev_evolution[i].num} - ${data.pokemon[current_pokemon].prev_evolution[i].name}</p>`
         }
     }
     
+    //check if there are next evolutions for pokemon
     if (data.pokemon[i].next_evolution !== undefined){
+        //loops through next_evolutions and prints them out
         for (let i = 0; i < data.pokemon[current_pokemon].next_evolution.length; i++){
             html +=`
             <p>Next Evolution: ${data.pokemon[current_pokemon].next_evolution[i].num} - ${data.pokemon[current_pokemon].next_evolution[i].name}</p>`
