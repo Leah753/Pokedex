@@ -46,7 +46,7 @@ html += `
     <p>Egg hatch distance: ${data.pokemon[i].egg}</p>
     <p>Spawn chance: ${data.pokemon[i].spawn_chance}</p>
     <p>Average spawn: ${data.pokemon[i].avg_spawns}</p>
-    <p>Spawn time: ${data.pokemon[i].spawn_time}/p>
+    <p>Spawn time: ${data.pokemon[i].spawn_time}</p>
     <p>Multipliers: ${data.pokemon[i].multipliers}</p>
 
 
