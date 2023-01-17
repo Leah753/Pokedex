@@ -44,17 +44,16 @@ for (let i = 0; i < data.pokemon.length; i++) {
     <h1>${data.pokemon[i].name}</h1> 
     <img src="${data.pokemon[i].img}">
     <h2>Type:</h2>
-    <ul>
-      <li>${data.pokemon[i].type[0]}</li>
-
-      `
-      //check if pokemon has a second type
-    if (data.pokemon[i].type[1] !== undefined){
-        html += `
-        <li>${data.pokemon[i].type[1]}</li>
-        `
+    <ul>`
+    for (let i = 0; i < data.pokemon[current_pokemon].type.length; i++) {
+        
+        if (data.pokemon[current_pokemon].type[i] !== "undefined"){
+            html += `
+            <li>${data.pokemon[current_pokemon].type[i]}</li>
+            `
+        }
     }
-
+        
     html += `
     </ul>
     <h2>Weaknesses:</h2>
