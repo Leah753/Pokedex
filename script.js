@@ -39,15 +39,15 @@ for (let i = 0; i < data.pokemon.length; i++) {
 html += `
       
     </ul>
-    <p>Height: ${data.pokemon[i].height}</p>
-    <p>Weight: ${data.pokemon[i].weight}</p>
-    <p>Candy :${data.pokemon[i].candy}</p>
-    <p>Candy count: ${data.pokemon[i].candy_count}</p>
-    <p>Egg hatch distance: ${data.pokemon[i].egg}</p>
-    <p>Spawn chance: ${data.pokemon[i].spawn_chance}</p>
-    <p>Average spawn: ${data.pokemon[i].avg_spawns}</p>
-    <p>Spawn time: ${data.pokemon[i].spawn_time}</p>
-    <p>Multipliers: ${data.pokemon[i].multipliers}</p>
+    <p><strong>Height:</strong> ${data.pokemon[i].height}</p>
+    <p><strong>Weight:</strong> ${data.pokemon[i].weight}</p>
+    <p><strong>Candy:</strong> ${data.pokemon[i].candy}</p>
+    <p><strong>Candy count:</strong> ${data.pokemon[i].candy_count}</p>
+    <p><strong>Egg hatch distance:</strong> ${data.pokemon[i].egg}</p>
+    <p><strong>Spawn chance:</strong> ${data.pokemon[i].spawn_chance}</p>
+    <p><strong>Average spawn:</strong> ${data.pokemon[i].avg_spawns}</p>
+    <p><strong>Spawn time:</strong> ${data.pokemon[i].spawn_time}</p>
+    <p><strong>Multipliers:</strong> ${data.pokemon[i].multipliers}</p>
 
 
     <h2>Evolution line</h2>
