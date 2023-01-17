@@ -4,6 +4,25 @@ const output = document.getElementById("output");
 
 
  let html = "";
+ let total_spawns = 0;
+ let total_spawn_chance = 0;
+ for (let i = 0; i < data.pokemon.length; i++) {
+    //adds up avg_spawns for all pokemon
+    total_spawns += data.pokemon[i].avg_spawns;
+    //adds up spawn_chance for all pokemon
+    total_spawn_chance += data.pokemon[i].spawn_chance;
+ }
+//calculates average spawns for all pokemon
+let average_spawns_all = total_spawns / (data.pokemon.length);
+//calculates average spawn chance for all pokemon
+let average_spawn_chance = total_spawn_chance / (data.pokemon.length);
+
+html += `<h2>Statistics:</h2>
+<p><strong>Average spawns all pokemon:</strong> ${average_spawns_all}</p>
+<p><strong>Average spawns chance all pokemon:</strong> ${average_spawn_chance}</p>
+`
+
+
 for (let i = 0; i < data.pokemon.length; i++) {
     let current_pokemon = i;
     // html += `<p>${data[i].name}: ${data[i].value}</p>`;
