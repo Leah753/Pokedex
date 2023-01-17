@@ -7,6 +7,8 @@ let html = "";
 let total_spawns = 0;
 let total_spawn_chance = 0;
 let total_grass = 0;
+let total_water = 0;
+let total_fire = 0;
 for (let i = 0; i < data.pokemon.length; i++) {
     let current_pokemon = i;
     //adds up avg_spawns for all pokemon
@@ -18,6 +20,18 @@ for (let i = 0; i < data.pokemon.length; i++) {
     for (let i = 0; i < data.pokemon[current_pokemon].type.length; i++) {
         if (data.pokemon[current_pokemon].type[i] === "Grass"){
             total_grass += 1;
+        }
+    }
+    //checks if pokemon is a water type
+    for (let i = 0; i < data.pokemon[current_pokemon].type.length; i++) {
+        if (data.pokemon[current_pokemon].type[i] === "Water"){
+            total_water += 1;
+        }
+    }
+    //checks if pokemon is a fire type
+    for (let i = 0; i < data.pokemon[current_pokemon].type.length; i++) {
+        if (data.pokemon[current_pokemon].type[i] === "Fire"){
+            total_fire += 1;
         }
     }
  }
@@ -32,6 +46,8 @@ html += `<h2>Statistics:</h2>
 
 
 <p><strong>Total grass types:</strong> ${total_grass}</p>
+<p><strong>Total water types:</strong> ${total_water}</p>
+<p><strong>Total fire types:</strong> ${total_fire}</p>
 `
 
 
